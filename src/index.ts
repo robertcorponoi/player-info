@@ -10,7 +10,6 @@ import Hypergiant from 'hypergiant';
  * A client-side only solution to manage player state and data.
  */
 export default class PlayerInfo {
-
   /**
    * A reference to the Storage object.
    * 
@@ -52,23 +51,21 @@ export default class PlayerInfo {
   private _onDisconnect: Hypergiant = new Hypergiant();
 
   constructor() {
-
     this._storage.load();
 
     if (!this._storage.persistentData.id) {
-
       this._player = new Player(uuidv4());
 
       this._storage.persistentData.id = this._player.id;
-
-    } else this._player = new Player(this._storage.persistentData.id);
+    } else {
+      this._player = new Player(this._storage.persistentData.id);
+    }
 
     this._storage.save();
 
     window.addEventListener('load', () => this._onLoad());
 
     window.addEventListener('unload', () => this._onBeforeUnload());
-
   }
 
   /**
@@ -108,11 +105,9 @@ export default class PlayerInfo {
    * playerInfo.save('level', level);
    */
   save(key: string, item: string) {
-
     this._storage.persistentData[key] = item;
 
     this._storage.save();
-
   }
 
   /**
@@ -127,9 +122,7 @@ export default class PlayerInfo {
    * const level = playerInfo.load('level');
    */
   load(key: string): string {
-
     return this._storage.persistentData[key];    
-
   }
 
   /**
@@ -138,9 +131,7 @@ export default class PlayerInfo {
    * @private
    */
   private _onLoad() {
-
     this._onConnect.dispatch(this.player);
-
   }
 
   /**
@@ -149,7 +140,6 @@ export default class PlayerInfo {
    * @private
    */
   private _onBeforeUnload() {
-
     this._player.disconnected = new Date();
 
     this._player.elapsed = this._player.disconnected.getTime() - this._player.connected.getTime();
@@ -157,7 +147,5 @@ export default class PlayerInfo {
     this._storage.save();
 
     this._onDisconnect.dispatch();
-
   }
-
 }

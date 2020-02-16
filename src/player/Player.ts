@@ -9,7 +9,6 @@ import { getBrowserInfo, isMobile } from '../utils/browser';
  * The Player object represents all of the data that is related to the client connected to the game.
  */
 export default class Player {
-
   /**
    * The id of this player.
    * 
@@ -81,7 +80,6 @@ export default class Player {
    * @param {string} id The id of this player.
    */
   constructor(id: string) {
-
     this.id = id;
 
     this.browser = getBrowserInfo();
@@ -95,7 +93,5 @@ export default class Player {
     this.viewport = { width: window.innerWidth, height: window.innerHeight };
 
     this.connected = new Date();
-
   }
-
 }

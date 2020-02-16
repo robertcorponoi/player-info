@@ -1,7 +1,7 @@
 import Player from './player/Player';
 import Hypergiant from 'hypergiant';
 /**
- * PlayerInfo gets relevant information about clients connecting to your game.
+ * A client-side only solution to manage player state and data.
  */
 export default class PlayerInfo {
     /**

@@ -6,7 +6,6 @@
  * @returns {string}
  */
 export function uuidv4(): string {
-
   let d: number = Date.now();
   d += performance.now();
 
@@ -17,5 +16,4 @@ export function uuidv4(): string {
 
     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
   });
-
 }

@@ -661,7 +661,7 @@ function () {
 }();
 
 /**
- * PlayerInfo gets relevant information about clients connecting to your game.
+ * A client-side only solution to manage player state and data.
  */
 
 var PlayerInfo =
@@ -720,7 +720,9 @@ function () {
     if (!this._storage.persistentData.id) {
       this._player = new Player(uuidv4());
       this._storage.persistentData.id = this._player.id;
-    } else this._player = new Player(this._storage.persistentData.id);
+    } else {
+      this._player = new Player(this._storage.persistentData.id);
+    }
 
     this._storage.save();
 
