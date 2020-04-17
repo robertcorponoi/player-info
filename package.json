@@ -1,6 +1,6 @@
 {
   "name": "player-info",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A client-side only solution to manage player state and data.",
   "module": "player-info.js",
   "scripts": {
@@ -27,19 +27,19 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-typescript": "^7.8.3",
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "rollup": "^1.31.1",
-    "rollup-plugin-babel": "^4.3.2",
-    "sinon": "^8.1.1",
-    "typescript": "^3.7.5"
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^2.6.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "sinon": "^9.0.2",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "hypergiant": "^3.0.4"
+    "hypergiant": "^3.0.5"
   }
 }
